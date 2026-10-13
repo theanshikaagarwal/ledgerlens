@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ledgerlens-app
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TABPFN_API_KEY
+        sync: false
+      - key: GEMMA_API_KEY
+        sync: false
+      - key: MONGODB_URI
+        sync: false
